@@ -1,5 +1,6 @@
 # Cafe-bistro
 ![Build with](https://img.shields.io/badge/Build%20with-Boostrap-blue)
+![Build with](https://img.shields.io/badge/Build%20with-Alpine%20Js-red)
 ![contributors](https://img.shields.io/badge/Contributors-1-green)
 ![Follow me](https://img.shields.io/twitter/follow/wendahdesmond?label=Follow&style=social)
 
