@@ -4,35 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--||| alpine JS |||-->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="css/app.css">
     <title>Cafe-Bistro</title>
 </head>
 
 <body>
     <!--||||||||| Nav Bar |||||||||-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Restau-Distro</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Contact</a>
-                    </li>
-                </ul>
-
+   <div x-data="{atTop: true}">
+      
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top"
+         :class="{'bg-light' : !atTop}"
+         @scroll.window="atTop = (window.pageYOffset > 20) ? false : true"
+         >
+            <div class="container">
+                <a class="navbar-brand" href="#">Restau-Distro</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Contact</a>
+                        </li>
+                    </ul>
+        
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+   </div>
     <!--||||||||| Nav Bar ends here |||||||||-->
 
     <!--||||||||| Showcase area |||||||||-->
@@ -93,7 +101,85 @@
     <!--||| Section b |||-->
     <section class="section-b py-lg-5 py-sm-4">
         <div class="container">
-            <div class="d-flex"></div>
+            <div class="flex-sm-column flex-lg-row d-flex justify-content-between align-items-end container mx-lg-5 mx-sm-0">
+            <div class="container">
+                    <p class="fs-3 text-primary border-top border-3  border-primary pt-1 font-secondary-bold text-sm-center"
+                        style="width: 2rem;">EXPLORE</p>
+                    <h1 class="font-primary font-bold text-primary text-dark text-x text-sm-center text-lg-left mt-3 text-danger">
+                        Hot <br> Selling Recipe
+                    </h1>
+            </div>
+            <div class="container mt-sm-3" x-data="{ tab:'tab1'}">
+               <ul class="nav">
+                   <li class="nav-item">
+                       <a href="#" class="nav-link text-dark"
+                        :class="{'border-bottom border-3 border-primary' : tab === 'tab1'}"
+                         @click.prevent ="tab = 'tab1'">
+                           Breakfast
+                        </a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="#" class="nav-link text-dark"
+                         :class="{'border-bottom border-3 border-primary' : tab === 'tab2'}"
+                           @click.prevent ="tab = 'tab2'">
+                           Launch
+                        </a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="#" class="nav-link text-dark"
+                         :class="{'border-bottom border-3 border-primary' : tab === 'tab3'}"
+                           @click.prevent ="tab = 'tab3'"
+                           >
+                           Dinner
+                        </a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="#" class="nav-link text-dark"
+                         :class="{'border-bottom border-3 border-primary' : tab === 'tab4'}"
+                           @click.prevent ="tab = 'tab4'"
+                           >
+                           Dessert
+                        </a>
+                   </li>
+                   <li class="nav-item">
+                       <a href="#" class="nav-link text-dark "
+                         :class="{'border-bottom border-3 border-primary' : tab === 'tab5'}"
+                           @click.prevent ="tab = 'tab5'"
+                           >
+                           Shake
+                        </a>
+                   </li>
+               </ul>
+               <div class="">
+                    <div class="" x-show="tab === 'tab1'">
+                        <p class="fs-5">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, doloribus! Breakfast
+                        </p>
+                    </div>
+                    <div class="" x-show="tab === 'tab2'">
+                        <p class="fs-5">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, doloribus! Launch
+                        </p>
+                    </div>
+                    <div class="" x-show="tab === 'tab3'">
+                        <p class="fs-5">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, doloribus! Dinner
+                        </p>
+                    </div>
+                    <div class="" x-show="tab === 'tab4'">
+                        <p class="fs-5">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, doloribus! Dessert
+                        </p>
+                    </div>
+                    <div class="" x-show="tab === 'tab5'">
+                        <p class="fs-5">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, doloribus! Shake
+                        </p>
+                    </div>
+               </div>
+           
+            </div>
+            </div>
         </div>
     </section>
     <script src="assets/boostrap/js/bootstrap.js"></script>
