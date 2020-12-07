@@ -7,6 +7,7 @@
     <!--||| alpine JS |||-->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <title>Cafe-Bistro</title>
 </head>
 
@@ -16,7 +17,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top overflow-hidden" :class="{'bg-light' : !atTop}"
             @scroll.window="atTop = (window.pageYOffset > 20) ? false : true">
             <div class="container">
-                <a class="navbar-brand" href="#">Restau-Distro</a>
+                <a class="navbar-brand" href="index.html">Restau-Distro</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
