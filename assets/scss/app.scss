@@ -65,7 +65,17 @@ $info:#e9b35c;
       background-repeat: no-repeat;
   }
 }
+.card{
+  border:0px solid #fff;
+  box-shadow: 0 0 4px rgba(33,33,33,.2); 
+}
+.card:hover{
+    cursor: pointer;
+    border: 0px;
+    border-bottom: $primary 3px solid;
+    box-shadow: 0 10px 11px rgba(33,33,33,.2); 
 
+}
 
 /// Media queries /////
 @media screen and(max-width:441px){
